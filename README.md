@@ -1,7 +1,7 @@
 # Welcome
 
 We'll build an open-source startup with agents.
-[Updates via Whatsapp](https://chat.whatsapp.com/DgKpG63438y8N7D3pHJ57t) (bottom part)
+[Updates via Whatsapp](https://chat.whatsapp.com/DgKpG63438y8N7D3pHJ57t).
 
 ## Goals
 
