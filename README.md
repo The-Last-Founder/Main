@@ -9,7 +9,7 @@ We'll build an open-source startup with agents.
 2. Do it together
 3. Build a real MVP
 
-## Piolot Project
+## Pilot Project
 
 [Johnny](https://github.com/The-Last-Founder/johnny), a Whatsapp-native agent that helps Build
 
