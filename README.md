@@ -9,9 +9,9 @@ We'll build an open-source startup with agents.
 2. Do it together
 3. Build a real MVP
 
-## Option projects
+## Piolot Project
 
-List of projects: coming soon.
+[Johnny](https://github.com/The-Last-Founder/johnny), a Whatsapp-native agent that helps Build
 
 ## About Us
 - [Ron Gross](https://ripper234.com/)
