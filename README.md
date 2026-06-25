@@ -1,5 +1,7 @@
 # Welcome
 
+> Build open-source MVPs together with state-of-the-art AI tools — learn, teach, and ship products that gain real traction.
+
 We'll build an open-source startup with agents.
 [Join the Community via Whatsapp](https://chat.whatsapp.com/DgKpG63438y8N7D3pHJ57t).
 
