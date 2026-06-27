@@ -27,3 +27,13 @@ Ron's project ideas: [1](https://jarvis.ripper234.com/projects.html) + [2](https
 <img width="400" height="230" alt="image" src="https://github.com/user-attachments/assets/0d6ad9b0-7ddc-4472-b18e-8e0a275dd1c6" />
 
 Part of [thelastfounder.com](http://thelastfounder.com/)
+
+# FAQ
+
+## Will this generate revenue?
+Maybe, maybe not.
+Currently, the primary objectives are **learning** and **real-world impact**.
+Some of our products could potentially generate some revenue, but we haven't discussed if this is important and how the finances would be handled.
+Potentially, some/all of the revenue could be funneled back into this open source movement as an NGO. Or not.
+
+## ADD YOUR OWN QUESTIONS (send pull requests)
