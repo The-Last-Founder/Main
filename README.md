@@ -13,8 +13,12 @@ We'll build an open-source startup with agents.
 
 [Johnny](https://github.com/The-Last-Founder/Johnny), a Whatsapp-native agent that helps Build
 
-We're open to discussing other project ideas as well.
-Ron's project ideas: [1](https://jarvis.ripper234.com/projects.html) + [2](https://workflowy.com/s/tech-projects-lst/vw9luM7GqabbgG0b). **Pull requests welcome**!
+### Other Project Options
+
+We're open to discussing other project ideas as well. 
+Ron's project ideas: [1](https://jarvis.ripper234.com/projects.html) + [2](https://workflowy.com/s/tech-projects-lst/vw9luM7GqabbgG0b).
+
+**Pull requests welcome**!
 
 ## About Us
 - [Ron Gross](https://ripper234.com/)
