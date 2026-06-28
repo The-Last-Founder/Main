@@ -24,8 +24,8 @@ Ron's project ideas: [1](https://jarvis.ripper234.com/projects.html) + [2](https
 **Pull requests welcome**!
 
 ## How we'll do it
-We're starting with a Cofounder.co project.
-See [our principles to working with Cofounder.co](https://github.com/The-Last-Founder/Build/blob/main/CoFounder.co.md).
+We're starting with a Cofounder.co project. 
+See [our principles to working with Cofounder.co](https://github.com/The-Last-Founder/Build/blob/main/CoFounder.co.md). 
 
 ## About Us
 
