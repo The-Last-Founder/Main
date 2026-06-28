@@ -1,3 +1,5 @@
+<img width="1916" height="821" alt="b02f36a6-1ce7-4fc4-960b-74ac6dd9d261" src="https://github.com/user-attachments/assets/2d94705f-6f90-40c8-95de-cb1d56ef2876" />
+
 # Welcome
 
 Build is an open-source [learn-by-shipping](https://blog.learningbyshipping.com/2013/01/03/hello-world/) community for people building with agents.
