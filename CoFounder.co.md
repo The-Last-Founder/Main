@@ -1,3 +1,5 @@
+<img width="1916" height="821" alt="b02f36a6-1ce7-4fc4-960b-74ac6dd9d261" src="https://github.com/user-attachments/assets/7780a60d-9fea-4c6b-8e28-e2166d688ccc" />
+
 This document documents and prepares us to launch our project/s on the Cofounder.co platform.
 
 # Cofounder.co Setup for Build
