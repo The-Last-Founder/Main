@@ -124,6 +124,21 @@ List:
 - anything that should be simplified
 ```
 
+## Specific Tools
+### Claude
+
+#### Lee Twito & Gal Peretz - 29.6.26
+
+This episode is about practical workflows for coding agents: Codex, Claude Code, Cursor, Superpowers, visual planning, PR environments, terminal setup, browser auth, secrets, and overnight agent tasks.
+Main thesis: agents work much better when you give them visual plans, explicit definitions of done, proof-of-work loops, isolated browser/auth profiles, and clear process skills.
+Several tool names are noisy in the transcript, so I marked unclear names rather than guessing. Confidence: medium, because the source is a rough speech-to-text transcript.
+
+[English translation](https://gist.github.com/ripper234/58606f3649dc5fb72955880ed0e6dfc2)
+
+Hebrew Source (30 min)
+https://www.linkedin.com/posts/lee-twito_70-our-claude-code-tips-share-7477210420131401728-yePc/
+
+
 ## Future Sections
 
 Possible future chapters:
@@ -138,3 +153,5 @@ Possible future chapters:
 - Open-source governance
 - Working with Cofounder.co
 - Human roles vs AI roles
+
+
