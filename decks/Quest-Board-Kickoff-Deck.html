@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: 1280px 720px;
+        margin: 0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --ink: #0e1116;
+        --muted: #5b6573;
+        --accent: #1f6feb;
+        --accent2: #0aa476;
+        --paper: #ffffff;
+        --soft: #f4f6fa;
+        --line: #e3e8ef;
+      }
+      html,
+      body {
+        font-family:
+          -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      .slide {
+        position: relative;
+        width: 1280px;
+        height: 720px;
+        overflow: hidden;
+        page-break-after: always;
+        background: var(--paper);
+        padding: 72px 88px;
+        display: flex;
+        flex-direction: column;
+      }
+      .slide:last-child {
+        page-break-after: auto;
+      }
+      .kicker {
+        font-size: 15px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 74px;
+        line-height: 1.02;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 46px;
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      p.lead {
+        font-size: 25px;
+        line-height: 1.45;
+        color: var(--muted);
+        font-weight: 450;
+      }
+      .brandbar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 8px;
+        width: 100%;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+      }
+      .footer {
+        position: absolute;
+        left: 88px;
+        right: 88px;
+        bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .spacer {
+        flex: 1;
+      }
+      .cover {
+        background: radial-gradient(
+          1200px 600px at 80% -10%,
+          #eaf1ff 0%,
+          #ffffff 55%
+        );
+      }
+      .logo-dot {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 800;
+        font-size: 26px;
+      }
+      .cover h1 {
+        font-size: 88px;
+        margin-top: 28px;
+      }
+      .cover .sub {
+        font-size: 30px;
+        color: var(--muted);
+        margin-top: 18px;
+        max-width: 920px;
+        line-height: 1.35;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 44px;
+      }
+      .card {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        height: 340px;
+      }
+      .card h3 {
+        font-size: 28px;
+        line-height: 1.1;
+        font-weight: 800;
+      }
+      .card p {
+        font-size: 19px;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+      .twocol {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+        margin-top: 34px;
+      }
+      .panel {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 32px;
+      }
+      .panel h3 {
+        font-size: 27px;
+        font-weight: 800;
+        margin-bottom: 18px;
+      }
+      .panel li {
+        font-size: 21px;
+        line-height: 1.55;
+        color: var(--ink);
+        list-style: none;
+        padding-left: 30px;
+        position: relative;
+      }
+      .panel li::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 13px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--accent2);
+      }
+      .steps {
+        margin-top: 32px;
+        display: grid;
+        gap: 14px;
+      }
+      .step {
+        border: 1px solid var(--line);
+        border-left: 6px solid var(--accent);
+        border-radius: 14px;
+        padding: 16px 20px;
+        font-size: 22px;
+      }
+      .step small {
+        color: var(--muted);
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="slide cover">
+      <div class="brandbar"></div>
+      <div class="row">
+        <div class="logo-dot">Q</div>
+        <div>
+          <div class="kicker">The Last Founder · Community Kick-off</div>
+        </div>
+      </div>
+      <h1>Quest Board</h1>
+      <div class="sub">
+        A GitHub-native project gallery where humans and AI agents coordinate
+        what to build next.
+      </div>
+      <div class="spacer"></div>
+      <div class="row" style="gap: 12px">
+        <span class="pill">🧭 Shared priorities</span>
+        <span class="pill">🤝 Human + agent workflow</span>
+        <span class="pill">🚀 Launch-ready projects</span>
+      </div>
+      <div class="footer">
+        <span>github.com/The-Last-Founder/quest-board</span>
+        <span>Build Kickoff · 1</span>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">Why this exists</div>
+      <h2 style="margin-top: 18px">From scattered ideas to clear momentum</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>See what to build</h3>
+          <p>
+            One place to discover project ideas, understand value, and decide
+            what deserves energy now.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Recruit contributors</h3>
+          <p>
+            Every quest shows help needed so beginners, builders, and experts
+            can all pick the right starting point.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ship in public</h3>
+          <p>
+            Work happens through GitHub-native flows: pull requests, reviews,
+            issues, and transparent iteration.
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <span>Quest Board · Kick-off</span>
+        <span>2</span>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">How it works</div>
+      <h2 style="margin-top: 18px">Text-first, then generated artifacts</h2>
+      <div class="twocol">
+        <div class="panel">
+          <h3>Source of truth</h3>
+          <ul>
+            <li>Start with a tiny project pitch.</li>
+            <li>Improve fields over time in README/YAML.</li>
+            <li>Keep updates small, reviewable, and public.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Generated outputs</h3>
+          <ul>
+            <li>Project cards and gallery pages.</li>
+            <li>Decks and social assets.</li>
+            <li>Agent tasks and launch checklists.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <p class="lead" style="font-size: 21px">
+        Edit source text, regenerate assets, repeat.
+      </p>
+      <div class="footer">
+        <span>Quest Board · Kick-off</span>
+        <span>3</span>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">Contribution paths</div>
+      <h2 style="margin-top: 18px">A role for every skill level</h2>
+      <div class="twocol">
+        <div class="panel">
+          <h3>New contributors</h3>
+          <ul>
+            <li>Submit one-liner project ideas.</li>
+            <li>Improve wording, naming, and clarity.</li>
+            <li>Validate templates and examples.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Experienced builders</h3>
+          <ul>
+            <li>Design ranking and governance logic.</li>
+            <li>Implement automation and generation flows.</li>
+            <li>Mentor quests from pitch to launch.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">
+        <span>Quest Board · Kick-off</span>
+        <span>4</span>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">Kick-off plan</div>
+      <h2 style="margin-top: 18px">First 2 weeks</h2>
+      <div class="steps">
+        <div class="step">
+          <b>Week 1 — Seed quests</b><br />
+          <small>Capture 10+ project pitches and normalize format.</small>
+        </div>
+        <div class="step">
+          <b>Week 1 — Open contribution lanes</b><br />
+          <small>Tag tasks by effort so everyone can join quickly.</small>
+        </div>
+        <div class="step">
+          <b>Week 2 — Dogfood and launch</b><br />
+          <small>Use Quest Board to prioritize and ship Quest Board itself.</small>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="row" style="gap: 12px">
+        <span class="pill">✅ Pick one first contribution today</span>
+      </div>
+      <div class="footer">
+        <span>github.com/The-Last-Founder/quest-board</span>
+        <span>5</span>
+      </div>
+    </section>
+  </body>
+</html>
