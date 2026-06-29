@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: 1280px 720px;
+        margin: 0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --ink: #0e1116;
+        --muted: #5b6573;
+        --accent: #1f6feb;
+        --accent2: #0aa476;
+        --paper: #ffffff;
+        --soft: #f4f6fa;
+        --line: #e3e8ef;
+      }
+      html,
+      body {
+        font-family:
+          -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      .slide {
+        position: relative;
+        width: 1280px;
+        height: 720px;
+        overflow: hidden;
+        page-break-after: always;
+        background: var(--paper);
+        padding: 72px 88px;
+        display: flex;
+        flex-direction: column;
+      }
+      .slide:last-child {
+        page-break-after: auto;
+      }
+      .kicker {
+        font-size: 15px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 74px;
+        line-height: 1.02;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 46px;
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      p.lead {
+        font-size: 25px;
+        line-height: 1.45;
+        color: var(--muted);
+        font-weight: 450;
+      }
+      .brandbar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 8px;
+        width: 100%;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+      }
+      .footer {
+        position: absolute;
+        left: 88px;
+        right: 88px;
+        bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .spacer {
+        flex: 1;
+      }
+
+      /* cover */
+      .cover {
+        background: radial-gradient(
+          1200px 600px at 80% -10%,
+          #eaf1ff 0%,
+          #ffffff 55%
+        );
+      }
+      .logo-dot {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 800;
+        font-size: 26px;
+      }
+      .cover h1 {
+        font-size: 104px;
+        margin-top: 28px;
+      }
+      .cover .sub {
+        font-size: 30px;
+        color: var(--muted);
+        margin-top: 18px;
+        max-width: 920px;
+        line-height: 1.35;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      /* goals cards */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+        margin-top: 46px;
+      }
+      .card {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 34px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        height: 330px;
+      }
+      .card .num {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--accent);
+      }
+      .card h3 {
+        font-size: 30px;
+        line-height: 1.1;
+        font-weight: 800;
+      }
+      .card p {
+        font-size: 19px;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+
+      /* flow */
+      .flow {
+        display: flex;
+        gap: 12px;
+        margin-top: 54px;
+        flex-wrap: wrap;
+      }
+      .step {
+        background: #fff;
+        border: 2px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 22px;
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .step .n {
+        color: var(--accent);
+        margin-right: 8px;
+      }
+      .arrow {
+        align-self: center;
+        color: var(--muted);
+        font-size: 26px;
+      }
+
+      /* pilot */
+      .twocol {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 46px;
+        margin-top: 40px;
+      }
+      .panel {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 34px;
+      }
+      .panel h3 {
+        font-size: 27px;
+        font-weight: 800;
+        margin-bottom: 18px;
+      }
+      .panel li {
+        font-size: 21px;
+        line-height: 1.6;
+        color: var(--ink);
+        list-style: none;
+        padding-left: 30px;
+        position: relative;
+      }
+      .panel li::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 13px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--accent2);
+      }
+      .panel li b {
+        font-weight: 700;
+      }
+
+      /* repo file list */
+      .files {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 40px;
+        margin-top: 30px;
+      }
+      .file {
+        display: flex;
+        gap: 14px;
+        align-items: baseline;
+        font-size: 21px;
+      }
+      .file code {
+        font-family: "SF Mono", Menlo, monospace;
+        font-size: 19px;
+        background: #eef2f8;
+        padding: 3px 9px;
+        border-radius: 7px;
+        font-weight: 700;
+        color: #16324f;
+      }
+      .file span {
+        color: var(--muted);
+        font-size: 19px;
+      }
+
+      .cta {
+        display: flex;
+        gap: 18px;
+        margin-top: 36px;
+        flex-wrap: wrap;
+      }
+      .cta .pill.primary {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+        font-size: 18px;
+        padding: 13px 22px;
+      }
+      .founders {
+        display: flex;
+        gap: 40px;
+        margin-top: 30px;
+        font-size: 21px;
+      }
+      .founders b {
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SLIDE 1 — COVER -->
+    <section class="slide cover">
+      <div class="brandbar"></div>
+      <div class="row">
+        <div class="logo-dot">B</div>
+        <div>
+          <div class="kicker">The Last Founder · Community Kick-off</div>
+        </div>
+      </div>
+      <h1>Build</h1>
+      <div class="sub">
+        An open-source, <b>learn-by-shipping</b> community for people building
+        with AI agents — we ship a real startup together.
+      </div>
+      <div class="spacer"></div>
+      <div class="row" style="gap: 12px">
+        <span class="pill">🤝 Open source</span>
+        <span class="pill">🚀 Ship a real MVP</span>
+        <span class="pill">🤖 Built with agents</span>
+      </div>
+      <div class="footer">
+        <span>github.com/The-Last-Founder/Build</span>
+        <span>thelastfounder.com</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 — WHAT IS BUILD -->
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">What is this?</div>
+      <h2 style="margin-top: 18px">
+        We don't just talk about agents.<br />We ship with them.
+      </h2>
+      <p class="lead" style="margin-top: 24px; max-width: 1000px">
+        Build is a community that learns by <b>doing</b>. Together we'll take
+        one real open-source startup from idea to launch — and document what
+        actually works along the way.
+      </p>
+      <div class="flow">
+        <div class="step"><span class="n">1</span>Choose a pilot</div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="n">2</span>Spec the MVP</div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="n">3</span>Code</div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="n">4</span>Deploy</div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="n">5</span>Market</div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="n">6</span>Learn</div>
+      </div>
+      <div class="spacer"></div>
+      <p class="lead" style="font-size: 22px">
+        No theory-only meetups. A live repo, real pull requests, real users.
+      </p>
+      <div class="footer"><span>Build · Kick-off</span><span>2</span></div>
+    </section>
+
+    <!-- SLIDE 3 — GOALS -->
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">Why we're here</div>
+      <h2 style="margin-top: 18px">Three goals</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="num">01</div>
+          <h3>Learn by shipping</h3>
+          <p>
+            Use AI agents to build for startups — Cofounder.co, Claude,
+            paperclip.ing and more. Hands on the keyboard, not slides.
+          </p>
+        </div>
+        <div class="card">
+          <div class="num">02</div>
+          <h3>Teach each other</h3>
+          <p>
+            Share what actually works — and what doesn't. The community's edge
+            is its collective, real-world knowledge.
+          </p>
+        </div>
+        <div class="card">
+          <div class="num">03</div>
+          <h3>Launch a real MVP</h3>
+          <p>
+            Not a demo. A working open-source product with real users — built,
+            deployed, and marketed together.
+          </p>
+        </div>
+      </div>
+      <div class="footer"><span>Build · Kick-off</span><span>3</span></div>
+    </section>
+
+    <!-- SLIDE 4 — PILOT + HOW -->
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">Our first project</div>
+      <h2 style="margin-top: 18px">
+        The pilot: <span style="color: var(--accent)">Johnny</span>
+      </h2>
+      <div class="twocol">
+        <div class="panel">
+          <h3>What Johnny is</h3>
+          <ul>
+            <li>
+              A <b>WhatsApp-native agent</b> that helps the Build community.
+            </li>
+            <li>
+              Our shared playground — everyone contributes to one real product.
+            </li>
+            <li>
+              Open to other ideas too: pilots get proposed and chosen together.
+            </li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>How we work</h3>
+          <ul>
+            <li>
+              Start as a <b>Cofounder.co</b> project, with shared working
+              principles.
+            </li>
+            <li>
+              Explore the agent <b>tool stack</b> as we go and write down what
+              wins.
+            </li>
+            <li>
+              <b>Pull requests welcome</b> — that's how you join the build.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <p class="lead" style="font-size: 21px">
+        Revenue? Maybe. For now the goal is <b>learning</b> and
+        <b>real-world impact</b>.
+      </p>
+      <div class="footer"><span>Build · Kick-off</span><span>4</span></div>
+    </section>
+
+    <!-- SLIDE 5 — THE REPO + GET INVOLVED -->
+    <section class="slide">
+      <div class="brandbar"></div>
+      <div class="kicker">The repo &amp; how to jump in</div>
+      <h2 style="margin-top: 18px">Everything lives in one place</h2>
+      <div class="files">
+        <div class="file">
+          <code>README.md</code><span>Start here — mission, goals, links.</span>
+        </div>
+        <div class="file">
+          <code>BUSINESS.md</code><span>The why and the model.</span>
+        </div>
+        <div class="file">
+          <code>METHODOLOGY.md</code><span>How we build, step by step.</span>
+        </div>
+        <div class="file">
+          <code>TOOLS.md</code><span>The agent tool stack we use.</span>
+        </div>
+        <div class="file">
+          <code>TEAM.md</code><span>Who's building & how to join.</span>
+        </div>
+        <div class="file">
+          <code>CoFounder.co.md</code
+          ><span>Our principles for working with Cofounder.co.</span>
+        </div>
+      </div>
+      <div class="cta">
+        <span class="pill primary">💬 Join via WhatsApp</span>
+        <span class="pill">⭐ Star &amp; fork the repo</span>
+        <span class="pill">🔧 Open your first pull request</span>
+      </div>
+      <div class="founders">
+        <span>Built by &nbsp;<b>Ron Gross</b></span>
+        <span><b>Sharon Shineberg</b></span>
+        <span style="color: var(--muted)">· part of thelastfounder.com</span>
+      </div>
+      <div class="footer">
+        <span>github.com/The-Last-Founder/Build</span><span>5</span>
+      </div>
+    </section>
+  </body>
+</html>
