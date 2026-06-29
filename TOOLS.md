@@ -1,5 +1,7 @@
 # Tools
 
+<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/9feabdaf-616a-4041-ab92-5dc5331b0062" />
+
 A starter map of tools and practices we may use while building the Build community and the Johnny pilot.
 
 ## How to read this
