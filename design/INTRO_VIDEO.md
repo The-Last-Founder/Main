@@ -162,3 +162,148 @@ Voiceover:
 ## Best single-line pitch
 
 > Build is an open-source learn-by-shipping community where humans and AI agents build a real startup together in public.
+
+---
+
+## Full production spec (for the final render)
+
+### Selected cut
+
+**Option 1 — "Join the party"** (~105 seconds).  
+This is the primary cut for homepage, pinned social post, and WhatsApp invite sharing.
+
+---
+
+### Color palette
+
+| Role | Hex | Usage |
+|------|-----|-------|
+| Background | `#0D1117` | Full-bleed dark base (GitHub dark) |
+| Primary text | `#E6EDF3` | Body copy, voiceover captions |
+| Accent / highlight | `#58A6FF` | Section headers, key phrases, underlines |
+| Positive / go | `#3FB950` | "Ship", "real users", CTA button fill |
+| Neutral secondary | `#8B949E` | Timestamps, metadata, sub-labels |
+| CTA card BG | `#161B22` | End-card panel background |
+| CTA button text | `#FFFFFF` | WhatsApp CTA label |
+| Warning / contrast | `#F78166` | Used sparingly for "Not theory / Not demos" antithesis lines |
+
+---
+
+### Typography
+
+| Role | Typeface | Weight | Size guidance |
+|------|----------|--------|---------------|
+| Section label | JetBrains Mono / monospace fallback | Regular | 14–16 px equivalent |
+| Voiceover caption | Inter / system-ui sans-serif | SemiBold | 28–34 px, centred |
+| Highlight phrase | Same sans-serif | ExtraBold | 36–42 px, accent colour |
+| End-card headline | Sans-serif | Black / 900 | 48 px |
+| Sub-label / URL | Monospace | Regular | 16 px, neutral secondary colour |
+
+Rules:
+- Maximum two font weights visible at once per scene.
+- Line length ≤ 45 characters per line for readability at video size.
+- No decorative or serif fonts.
+
+---
+
+### Animation & motion spec
+
+**Scene entry — "slide-up fade"**  
+Each text block slides up 18 px while fading in over 0.35 s (ease-out cubic).  
+Stagger multi-line blocks by 0.12 s per line.
+
+**Accent underline sweep**  
+Key phrases (e.g., "actually ship", "Real specs", "Quest Board") get a thin 2 px line
+that sweeps left-to-right under the text in accent blue over 0.4 s, appearing 0.25 s
+after the word has faded in.
+
+**Section dividers**  
+A horizontal rule (1 px, accent blue, 30 % opacity) sweeps in from left over 0.3 s
+between major sections.
+
+**Transition — cut to black**  
+Hard cuts between sections (0 s). No dissolves. Keeps energy brisk.
+
+**CTA card animation**  
+End card fades in from black over 0.6 s.  
+WhatsApp button pulses (scale 1.0 → 1.04 → 1.0) twice, then holds.
+
+**Background texture**  
+Subtle static noise (3 % opacity) over the solid background to prevent banding on
+compressed exports. No moving particles or looping animations behind text — they
+distract from reading.
+
+---
+
+### Narration / voice spec
+
+**Character:** Calm, confident, subtly playful. Think: indie-game narrator meets
+thoughtful engineer. Not hype. Not robotic. Measured enthusiasm.
+
+**Pace:** 130–145 words per minute. Slight pause (0.4–0.6 s) between sentences in the
+same section. Longer pause (0.8–1.0 s) between sections.
+
+**Tone arc:**
+1. Hook — direct, slightly provocative
+2. What / Why — clear and assured
+3. First quest — excited but precise
+4. Who it's for — inclusive, warm
+5. CTA — calm invitation, not a sales push
+
+**Voice profile (for TTS or casting brief):**
+- Gender: male or gender-neutral
+- Age: mid-30s reading
+- Accent: neutral General American or light British (no strong regional accent)
+- Emotion: composed, curious, genuine
+- No vocal fry; no upspeak; no overdone enthusiasm
+
+**Recommended TTS voices (if using AI voice):**
+- ElevenLabs: "Adam" (calm, authoritative) or "Josh" (natural, warm)
+- OpenAI TTS: `onyx` (deep, composed) or `echo` (natural, mid-range)
+
+**Pacing notes per section:**
+- "Most communities talk about building with AI. / Build is where we actually ship."
+  — short pause after "AI", slight emphasis on "actually ship"
+- "Not theory-only meetups. / Not fake demos." — staccato rhythm, each phrase its own beat
+- CTA lines — slower pace, end on a rising note at "pick your first quest"
+
+---
+
+### Music spec
+
+**Genre:** Indie electronic / light chiptune-influenced instrumental  
+**Mood:** Forward-moving, curious, slightly playful — not chaotic or dramatic  
+**BPM:** 95–110  
+**Key:** Major (uplifting) or Dorian mode (adds slight introspective edge)
+
+**Structure:**
+- 0:00–0:10: Sparse intro — single melodic element, low drums
+- 0:10–1:26: Main body — full groove, melody, light synth pads
+- 1:26–1:45: Builds to CTA — gentle lift, adds one layer
+- End card: music ducks to ~20 % volume under CTA, fades out over 3 s
+
+**Reference feel:** Hollow Knight OST (calm exploration tracks) / Celeste OST (gentle
+chapters) / Oneshot OST — simple, human, slightly nostalgic without being retro.
+
+**Licensing:** Use royalty-free or CC0 source (e.g., Free Music Archive, Pixabay Music,
+ccMixter). Do not use copyrighted commercial tracks.
+
+**Mix:** Music sits at −18 dBFS under narration. Narration peaks at −6 dBFS.
+Duck music by additional −6 dB during CTA card.
+
+---
+
+### Export spec
+
+| Parameter | Value |
+|-----------|-------|
+| Resolution | 1920 × 1080 (Full HD) |
+| Frame rate | 30 fps |
+| Video codec | H.264 (libx264) |
+| Audio codec | AAC, 192 kbps |
+| Colour space | BT.709 |
+| Max bitrate | 6 Mbps |
+| Output file | `artifacts/videos/build-intro-final.mp4` |
+
+Subtitles / captions: burn-in white text with a thin black outline (`stroke_width=2`)
+so the video is readable without sound — important for autoplay-muted social contexts.
