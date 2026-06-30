@@ -297,12 +297,12 @@ Duck music by additional −6 dB during CTA card.
 
 | Parameter | Value |
 |-----------|-------|
-| Resolution | 1920 × 1080 (Full HD) |
+| Resolution | 1280 × 720 (HD 720p) |
 | Frame rate | 30 fps |
 | Video codec | H.264 (libx264) |
-| Audio codec | AAC, 192 kbps |
+| Audio codec | AAC, 192 kbps (add in post when voice/music are ready) |
 | Colour space | BT.709 |
-| Max bitrate | 6 Mbps |
+| CRF | 23 (good quality / small file) |
 | Output file | `artifacts/videos/build-intro-final.mp4` |
 
 Subtitles / captions: burn-in white text with a thin black outline (`stroke_width=2`)

@@ -41,10 +41,44 @@ NEGATIVE    = (247, 129, 102)   # #F78166
 NEUTRAL     = (139, 148, 158)   # #8B949E
 CTA_BG      = ( 22,  27,  34)   # #161B22
 
-# Fonts
-FONT_BOLD    = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-FONT_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-FONT_MONO    = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+# Fonts — candidate paths searched in order; first existing file wins.
+_FONT_BOLD_CANDIDATES = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",      # Debian/Ubuntu
+    "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans-Bold.ttf",    # Fedora/RHEL
+    "/Library/Fonts/Arial Bold.ttf",                              # macOS
+    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+    "C:/Windows/Fonts/arialbd.ttf",                               # Windows
+]
+_FONT_REGULAR_CANDIDATES = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+    "/Library/Fonts/Arial.ttf",
+    "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "C:/Windows/Fonts/arial.ttf",
+]
+_FONT_MONO_CANDIDATES = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+    "/usr/share/fonts/dejavu-sans-fonts/DejaVuSansMono.ttf",
+    "/Library/Fonts/Courier New.ttf",
+    "C:/Windows/Fonts/cour.ttf",
+]
+
+
+def _resolve_font(candidates: list[str], role: str) -> str:
+    for path in candidates:
+        if os.path.isfile(path):
+            return path
+    raise FileNotFoundError(
+        f"No font found for role '{role}'. Tried:\n"
+        + "\n".join(f"  {p}" for p in candidates)
+        + "\nInstall DejaVu fonts (e.g. `sudo apt install fonts-dejavu-core`) or "
+        "update the candidate list in render_video.py."
+    )
+
+
+FONT_BOLD    = _resolve_font(_FONT_BOLD_CANDIDATES,    "bold")
+FONT_REGULAR = _resolve_font(_FONT_REGULAR_CANDIDATES, "regular")
+FONT_MONO    = _resolve_font(_FONT_MONO_CANDIDATES,    "mono")
 
 
 def _font(path: str, size: int) -> ImageFont.FreeTypeFont:
@@ -329,7 +363,10 @@ def frames_to_video(frame_list: list[tuple[Image.Image, float]], out_path: Path)
     print("Running:", " ".join(cmd))
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
-        print("ffmpeg stderr:", result.stderr[-2000:])
+        stderr = result.stderr
+        if len(stderr) > 4000:
+            stderr = stderr[:2000] + "\n… (truncated) …\n" + stderr[-2000:]
+        print("ffmpeg stderr:", stderr)
         sys.exit(1)
 
 
