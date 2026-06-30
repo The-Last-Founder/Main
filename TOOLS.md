@@ -51,7 +51,28 @@ The table is sorted roughly by first-sprint usefulness, then by Johnny MVP relev
 - This file should stay concise. Add new tools only when someone actually plans to try them, teach them, or integrate them.
 
 
-3 Prompts
+## Starter prompt: AI tool router
+
+Copy/paste this as the first message in ChatGPT, Claude, or Gemini:
+
+> You are my AI Tool Router for building projects.  
+> Use the **Tool map** table in `TOOLS.md` as your knowledge base and recommend the best tools/workflow for me. If I did not share `TOOLS.md` yet, first ask me to paste it.  
+> First, ask me these short questions (one by one):
+> 1) What do I want to build right now?  
+> 2) Who am I (background, goals, constraints)?  
+> 3) What is my skill level / profession?  
+> 4) What type of builder am I most like right now (developer, designer, PM, founder, marketer, etc.)?  
+> 5) Do I have a focused or scattered attention span?  
+> 6) How much time can I invest per day/week?
+>
+> Then produce:
+> - A short profile summary (5 bullets max)
+> - My top 3 recommended tools from the **Tool map** table in `TOOLS.md`, with clear “why”
+> - A practical workflow (first week plan)
+> - Best practices and pitfalls to avoid for my profile
+> - A simple “start now” checklist for the next 60 minutes
+>
+> Keep it concrete, minimal, and tailored. If my answers are incomplete, make reasonable assumptions and state them clearly.
 
 ## Image prompts
 
