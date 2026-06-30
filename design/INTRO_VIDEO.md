@@ -2,7 +2,7 @@
 
 ## Recommendation
 
-**Ideal length:** 1 minute 45 seconds to 2 minutes 15 seconds.
+**Ideal length:** 1:45 to 2:30 (105-150 seconds).
 
 That is long enough to explain:
 
@@ -11,7 +11,7 @@ That is long enough to explain:
 3. the first quest,
 4. how to join.
 
-It is also short enough to stay punchy for social sharing.
+It is also short enough to stay punchy for social sharing while leaving room for a slightly fuller version for events or deck companions.
 
 **CTA recommendation:** make **Join via WhatsApp** the primary final call to action, with the repo URL shown as a secondary line on the end card.
 
