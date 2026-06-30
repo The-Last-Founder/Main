@@ -1,11 +1,11 @@
 # Intro video outputs
 
-This folder contains rendered intro-video outputs based on `/home/runner/work/Build/Build/design/INTRO_VIDEO.md`.
+This folder contains rendered intro-video outputs based on `design/INTRO_VIDEO.md`.
 
 ## Files
 
-- `/home/runner/work/Build/Build/artifacts/videos/build-intro-option-1.mp4`
-- `/home/runner/work/Build/Build/artifacts/videos/build-intro-option-2.mp4`
+- `artifacts/videos/build-intro-option-1.mp4`
+- `artifacts/videos/build-intro-option-2.mp4`
 
 ## Notes
 
