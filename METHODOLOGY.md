@@ -124,16 +124,18 @@ List:
 - anything that should be simplified
 ```
 
-### Review-loop helper: tiny-pr-bot
+### Spec-improvement helper: tiny-pr-bot
 
-For PR-heavy agent workflows, add [ripper234/tiny-pr-bot](https://github.com/ripper234/tiny-pr-bot) as an extra reviewer signal.
+[ripper234/tiny-pr-bot](https://github.com/ripper234/tiny-pr-bot) is an autonomous bot (powered by OpenClaw) that watches spec repositories and opens small, focused PRs to improve clarity, reduce ambiguity, and unblock decisions — with minimal decision overhead for the operator.
 
-Use it as a lightweight second pass after the agent and author self-review:
+Typical PR size: 1–2 lines, 1 file. The bot avoids large refactors and multi-decision changes.
 
-1. Open/update PR.
-2. Let tiny-pr-bot leave focused comments.
-3. Triage comments into: fix now, discuss, or ignore with reason.
-4. Push fixes and re-run review.
+Usage pattern:
+
+1. Point the bot at a spec repo via `config/clawbot.config.json`.
+2. The bot polls continuously; when it identifies a high-value improvement, it opens a PR and notifies via Telegram.
+3. Review the PR and respond with the feedback protocol: `APPROVE`, `CHANGES`, `NOPE`, `NOW`, `PAUSE`, or `RESUME`.
+4. The bot waits for feedback before proposing the next PR, keeping decision load low.
 
 ## Specific Tools
 ### Claude

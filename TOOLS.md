@@ -34,7 +34,7 @@ The table is sorted roughly by first-sprint usefulness, then by Johnny MVP relev
 | [OpenClaw](https://github.com/openclaw/openclaw) | Both | Personal agent runtime | Self-hosted personal AI assistant that runs across chat channels and devices. | Candidate reference/backend for chat-native agent architecture and task automation. | Active OSS. | Very high GitHub traction. |
 | [Hermes Agent](https://github.com/NousResearch/hermes-agent) | Both | Persistent agent runtime | Self-improving agent with memory, skills, messaging gateways, and multi-platform execution. | Candidate backend/reference for persistent memory, agent skills, and long-running routines. | Active OSS, with June 2026 releases. | High relevance for persistent-agent patterns. |
 | [**Claude Tag**](https://www.anthropic.com/news/introducing-claude-tag) | Both | Team agent in chat | Lets teams tag Claude inside Slack channels and delegate work. | Strong reference for Johnny’s “shared teammate in a group chat” behavior. | Released 2026-06-23, beta. | Anthropic Team/Enterprise beta. |
-| [tiny-pr-bot](https://github.com/ripper234/tiny-pr-bot) | Both | PR review assistant | Lightweight GitHub bot that leaves focused PR feedback comments. | Gives us a low-friction review layer to catch issues early in agent-generated and human-generated PRs. | Active OSS. | Direct fit for review-heavy AI workflows. |
+| [tiny-pr-bot](https://github.com/ripper234/tiny-pr-bot) | Both | Autonomous spec bot | Autonomous bot (powered by OpenClaw) that polls spec repos and opens tiny (1–2 line) focused PRs to improve clarity, reduce ambiguity, and surface decisions. | Candidate for keeping Build's spec files continuously improved with minimal operator overhead; operator reviews each tiny PR via a simple feedback protocol. | Active OSS. | Direct fit for spec-heavy AI-native projects. |
 | [Loop Engineering](https://www.oreilly.com/radar/loop-engineering/) | General | Practice / workflow | Designing feedback loops around agents: plan, act, verify, adjust, repeat. | Core skill to teach builders: stop prompting once, start designing reliable loops. | Emerging 2026 practice. | High relevance, not a product. |
 | [Ponytail](https://github.com/DietrichGebert/ponytail) | General | Agent skill / ruleset | Makes coding agents prefer the smallest working solution and avoid overengineering. | Useful default skill/ruleset so agents ship less bloat and simpler code. | Active OSS. | Strong fit for builder discipline. |
 | [Talk To My Agent](https://www.talktomyagent.io/) | General | Voice gateway | Gives an OpenClaw-style agent a real phone number. | Later-stage inspiration for voice access, support calls, or personal assistant workflows. | Active commercial product. | Niche but directly adjacent. |
@@ -69,7 +69,7 @@ Composition: a clean diagrammatic landscape or map. In the middle, create a soft
 
 Required grouped content:
 1. A clearly emphasized “Start here” zone nearest the center, visually strongest, containing: “Cofounder.co”, “Claude Code”, “Codex”, “Claude Tag”, and “open-bsp-api”.
-2. A “Build workflow” zone containing: “GitHub Copilot”, “ctx”, and “Ponytail”.
+2. A "Build workflow" zone containing: "GitHub Copilot", "ctx", "Ponytail", and "tiny-pr-bot".
 3. An “Agent runtimes” zone containing: “OpenClaw”, “Hermes Agent”, and “Talk To My Agent”.
 4. A “Johnny integrations” zone containing: “Any.do” and “monday.com”.
 5. A small foundation or baseline zone containing: “Loop Engineering”.
