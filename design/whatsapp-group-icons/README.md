@@ -18,25 +18,25 @@ The primary Build WhatsApp group icon lives in this folder, with the remaining c
 
 Other concepts are preserved in [`alternatives/`](./alternatives):
 
-1. `build-whatsapp-icon-01-quest-board.svg` — quest-board grid with one highlighted tile
-2. `build-whatsapp-icon-02-party-formation.svg` — three collaborators orbiting an open slot
-3. `build-whatsapp-icon-03-blueprint.svg` — project brief / blueprint with a completion mark
-4. `build-whatsapp-icon-05-builder-spark.svg` — two build blocks under a shared spark
+- `build-whatsapp-icon-01-quest-board.svg` — quest-board grid with one highlighted tile
+- `build-whatsapp-icon-02-party-formation.svg` — three collaborators orbiting an open slot
+- `build-whatsapp-icon-03-blueprint.svg` — project brief / blueprint with a completion mark
+- `build-whatsapp-icon-05-builder-spark.svg` — two build blocks under a shared spark
 
 ### Alternative previews
 
-#### 1. Quest board
+#### Quest board
 
 ![Quest board icon](./alternatives/build-whatsapp-icon-01-quest-board.svg)
 
-#### 2. Party formation
+#### Party formation
 
 ![Party formation icon](./alternatives/build-whatsapp-icon-02-party-formation.svg)
 
-#### 3. Blueprint
+#### Blueprint
 
 ![Blueprint icon](./alternatives/build-whatsapp-icon-03-blueprint.svg)
 
-#### 4. Builder spark
+#### Builder spark
 
 ![Builder spark icon](./alternatives/build-whatsapp-icon-05-builder-spark.svg)
