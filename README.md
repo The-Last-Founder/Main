@@ -37,7 +37,8 @@ Ron's project ideas: [1](https://jarvis.ripper234.com/projects.html) + [2](https
 ## How we'll do it
 We're starting with a Cofounder.co project.  
 See [our principles to working with Cofounder.co](https://github.com/The-Last-Founder/Build/blob/main/CoFounder.co.md). 
-For launch collateral, see the [intro video brief](design/INTRO_VIDEO.md) and [rendered video outputs](artifacts/videos).
+For launch collateral, see the [intro video brief](design/INTRO_VIDEO.md) and [rendered video outputs](artifacts/videos).  
+For community outreach, see the [skill level infographic](design/skill-level-infographic.html) (open in a browser).
 
 ## About Us
 

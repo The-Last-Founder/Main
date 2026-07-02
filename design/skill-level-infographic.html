@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Build — For Every Skill Level</title>
+    <style>
+      :root {
+        --ink: #0e1116;
+        --muted: #5b6573;
+        --accent: #1f6feb;
+        --accent2: #0aa476;
+        --purple: #7c3aed;
+        --paper: #ffffff;
+        --soft: #f4f6fa;
+        --line: #e3e8ef;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, "Segoe UI", Inter, Helvetica, Arial,
+          sans-serif;
+        background: var(--soft);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+      }
+
+      /* ── Infographic shell ── */
+      .infographic {
+        width: min(860px, 100%);
+        background: var(--paper);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow:
+          0 4px 6px rgba(14, 17, 22, 0.04),
+          0 20px 60px rgba(14, 17, 22, 0.1);
+      }
+
+      /* ── Header ── */
+      .header {
+        background: linear-gradient(140deg, #0d1117 0%, #1a2740 100%);
+        padding: 52px 56px 44px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(31, 111, 235, 0.22) 0%,
+          transparent 70%
+        );
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        right: 140px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(10, 164, 118, 0.18) 0%,
+          transparent 70%
+        );
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .logo-dot {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 800;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .brand-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .header h1 {
+        font-size: 46px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: #fff;
+        line-height: 1.1;
+        position: relative;
+      }
+
+      .header h1 em {
+        font-style: normal;
+        background: linear-gradient(90deg, #60a5fa, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header .sub {
+        margin-top: 14px;
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.5;
+        position: relative;
+      }
+
+      /* ── Level rows ── */
+      .levels {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .level {
+        display: flex;
+        align-items: center;
+        padding: 26px 36px 26px 0;
+        border-bottom: 1px solid var(--line);
+        gap: 0;
+      }
+
+      .level:last-child {
+        border-bottom: none;
+      }
+
+      /* Colored left accent bar */
+      .level-badge {
+        width: 6px;
+        align-self: stretch;
+        flex-shrink: 0;
+        border-radius: 0 3px 3px 0;
+        margin-right: 28px;
+      }
+
+      .level-expert .level-badge {
+        background: var(--purple);
+      }
+
+      .level-builder .level-badge {
+        background: var(--accent);
+      }
+
+      .level-beginner .level-badge {
+        background: var(--accent2);
+      }
+
+      .level-id {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 86px;
+        flex-shrink: 0;
+        padding: 4px 0;
+      }
+
+      .level-emoji {
+        font-size: 32px;
+        line-height: 1;
+      }
+
+      .level-name {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+      }
+
+      .level-expert .level-name {
+        color: var(--purple);
+      }
+
+      .level-builder .level-name {
+        color: var(--accent);
+      }
+
+      .level-beginner .level-name {
+        color: var(--accent2);
+      }
+
+      .sep {
+        width: 1px;
+        height: 44px;
+        background: var(--line);
+        flex-shrink: 0;
+        margin: 0 28px;
+      }
+
+      .perks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        flex: 1;
+      }
+
+      .perk {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .level-expert .perk {
+        background: #f5f0ff;
+        color: #5b21b6;
+      }
+
+      .level-builder .perk {
+        background: #eff6ff;
+        color: #1d4ed8;
+      }
+
+      .level-beginner .perk {
+        background: #ecfdf5;
+        color: #065f46;
+      }
+
+      /* ── Common / Everyone base ── */
+      .level-common {
+        background: linear-gradient(135deg, #f0f6ff 0%, #edfaf5 100%);
+        border-top: 2px solid var(--line);
+        padding: 30px 36px;
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+
+      .level-common .level-badge {
+        background: linear-gradient(180deg, var(--accent), var(--accent2));
+      }
+
+      .level-common .level-name {
+        color: transparent;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .level-common .perk {
+        background: rgba(255, 255, 255, 0.85);
+        color: var(--ink);
+        border: 1px solid rgba(31, 111, 235, 0.14);
+        font-weight: 600;
+      }
+
+      /* ── Footer ── */
+      .footer {
+        padding: 18px 40px;
+        text-align: center;
+        font-size: 13px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        background: #fafbfc;
+      }
+
+      .footer a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="infographic">
+      <!-- Header -->
+      <header class="header">
+        <div class="brand">
+          <div class="logo-dot">B</div>
+          <span class="brand-name">Build</span>
+        </div>
+        <h1>A place for <em>every</em><br />skill level</h1>
+        <p class="sub">
+          Whether it's your first commit or you're leading production deploys —<br />
+          there's a role for you.
+        </p>
+      </header>
+
+      <!-- Level rows -->
+      <div class="levels">
+        <!-- Expert -->
+        <div class="level level-expert">
+          <div class="level-badge"></div>
+          <div class="level-id">
+            <span class="level-emoji">🚀</span>
+            <span class="level-name">Expert</span>
+          </div>
+          <div class="sep"></div>
+          <div class="perks">
+            <span class="perk">Shape the architecture</span>
+            <span class="perk">Lead a feature end-to-end</span>
+            <span class="perk">Mentor contributors</span>
+            <span class="perk">Pioneer AI agent patterns</span>
+          </div>
+        </div>
+
+        <!-- Builder / Intermediate -->
+        <div class="level level-builder">
+          <div class="level-badge"></div>
+          <div class="level-id">
+            <span class="level-emoji">🔧</span>
+            <span class="level-name">Builder</span>
+          </div>
+          <div class="sep"></div>
+          <div class="perks">
+            <span class="perk">Ship real features</span>
+            <span class="perk">Get your code reviewed</span>
+            <span class="perk">Learn AI coding workflows</span>
+            <span class="perk">Build your portfolio</span>
+          </div>
+        </div>
+
+        <!-- Beginner -->
+        <div class="level level-beginner">
+          <div class="level-badge"></div>
+          <div class="level-id">
+            <span class="level-emoji">🌱</span>
+            <span class="level-name">Newbie</span>
+          </div>
+          <div class="sep"></div>
+          <div class="perks">
+            <span class="perk">First PR welcome</span>
+            <span class="perk">Learn from live PRs</span>
+            <span class="perk">Contribute ideas &amp; docs</span>
+            <span class="perk">Get mentored</span>
+          </div>
+        </div>
+
+        <!-- Common / Everyone -->
+        <div class="level level-common">
+          <div class="level-badge"></div>
+          <div class="level-id">
+            <span class="level-emoji">🤝</span>
+            <span class="level-name">Everyone</span>
+          </div>
+          <div class="sep"></div>
+          <div class="perks">
+            <span class="perk">🛠️ Build together</span>
+            <span class="perk">🤖 Work with AI agents</span>
+            <span class="perk">📦 Ship real products</span>
+            <span class="perk">🌍 Open source</span>
+            <span class="perk">💡 Learn what works</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <a href="https://github.com/The-Last-Founder/Build"
+          >github.com/The-Last-Founder/Build</a
+        >
+        &nbsp;·&nbsp; Open source &nbsp;·&nbsp; Pull requests welcome
+      </footer>
+    </div>
+  </body>
+</html>
